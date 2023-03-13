@@ -22,12 +22,12 @@
         <div class="card-div">
             <div class="logo-number">
                 <img src="./images/card-logo.svg" alt="card-logo">
-                <h3>
+                <h3 class="output-number">
                     0000 0000 0000 0000
                 </h3>
             </div>
             <div class="name-date">
-                <p>
+                <p id ="jane-appleseed">
                     JANE APPLESEED
                 </p>
                 <p>
@@ -41,9 +41,9 @@
             <div id="text-frame">
                 <div class="name-div">
                     <label class="label-tag" for="input-name"> CARDHOLDER NAME</label>
-                    <input id="enter-name" type="text" placeholder="e.g. Jane Appleseed"/>
+                    <input onkeydown="return /[a-z ]/i.test(event.key)" id="enter-name" type="text" placeholder="e.g. Jane Appleseed"/>
                     <p class="wrong-name">
-                       Should inlude camel case!
+                       Should inlude space or camel case!
                     </p>
                     <p class="empty-name">
                         Can’t be blank
@@ -51,9 +51,10 @@
                 </div>
                 <div class="number-div">
                     <label class="label-tag" for="input-number"> CARD NUMBER</label>
-                    <input id="input-number" type="number" placeholder="e.g. 1234 5678 9123 0000" />
+                    <input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" minlength="16"
+                    maxlength="16" id="input-number" type="number" placeholder="e.g. 1234 5678 9123 0000" />
                     <p class="wrong-number">
-                        Wrong format, numbers only
+                       should include 16 digits
                     </p>
                     <p class="empty-number">
                         Can’t be blank
@@ -64,17 +65,26 @@
                     <div class="date-input">
                         <div class="year-date">
                             <div class="month-div">
-                                <input id="month-input" type="number" min="2023-03" placeholder="MM" />
+                                <input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                minlength="2"
+                                maxlength="2" id="month-input" type="number"  placeholder="MM" />
                                 <p class="empty-month">
                                     Can’t be blank
                                 </p>
                             </div>
-                            <input id="year-input" type="number" min="2023" max="2035" placeholder="YY" />
+                            <input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                            minlength="2"
+                            maxlength="2" id="year-input" type="number" min="2023" max="2035" placeholder="YY" />
                         </div>
                         <div class="cvc">
-                            <input id="cvc-number" type="number" placeholder="e.g. 123" />
+                            <input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                            minlength="3"
+                            maxlength="3" id="cvc-number" type="number" placeholder="e.g. 123" />
                             <p class="empty-cvc">
                                 Can’t be blank
+                            </p>
+                            <p class="error-cvc">
+                                should include 3 digits
                             </p>
                         </div>
                     </div>
