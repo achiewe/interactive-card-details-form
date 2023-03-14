@@ -123,6 +123,11 @@ body{
     width:327px;
 }
 
+.zero-div{
+    display: flex;
+    flex-direction: row;
+}
+
 .main-section{
     display:flex;
     flex-direction: column;
@@ -355,7 +360,7 @@ body{
     color:var(--red);
 }
 
-.error-cvc{
+.erorr-cvc{
     display: none;
     font-family: 'Space Grotesk', sans-serif;
     font-size: 12px;
