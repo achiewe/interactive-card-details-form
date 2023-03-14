@@ -30,9 +30,14 @@
                 <p id ="jane-appleseed">
                     JANE APPLESEED
                 </p>
-                <p>
-                    00/00
+                <div class="zero-div">
+                <p id="paragraph1">
+                    00
                 </p>
+                <p id="paragraph2">
+                    /00
+                </p>
+            </div>
             </div>
         </div>
     </div>
@@ -76,15 +81,12 @@
                             minlength="2"
                             maxlength="2" id="year-input" type="number" min="2023" max="2035" placeholder="YY" />
                         </div>
-                        <div class="cvc">
+                        <div class="cvc" id="cvc">
                             <input oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                             minlength="3"
                             maxlength="3" id="cvc-number" type="number" placeholder="e.g. 123" />
-                            <p class="empty-cvc">
-                                Can’t be blank
-                            </p>
-                            <p class="error-cvc">
-                                should include 3 digits
+                            <p class="erorr-cvc">
+                                Should include 3 digits
                             </p>
                         </div>
                     </div>
